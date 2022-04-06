@@ -27,10 +27,13 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RenderWindow.cpp">
+    <ClCompile Include="WindowRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainLoopTickController.cpp">
+    <ClCompile Include="WindowSyncer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,18 +44,24 @@
     <ClInclude Include="Logger.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RenderWindow.hpp">
+    <ClInclude Include="WindowRenderer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainLoopTickController.hpp">
+    <ClInclude Include="WindowSyncer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\SDL2_platformer_example_OLD\res\gfx\girl.png">
+    <Image Include="res\gfx\girl.png">
+      <Filter>Resource Files\gfx</Filter>
+    </Image>
+    <Image Include="res\gfx\cursor.png">
       <Filter>Resource Files\gfx</Filter>
     </Image>
   </ItemGroup>

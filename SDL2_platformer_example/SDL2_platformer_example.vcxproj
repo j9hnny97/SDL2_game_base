@@ -154,18 +154,21 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MainLoopTickController.cpp" />
-    <ClCompile Include="RenderWindow.cpp" />
+    <ClCompile Include="WindowSyncer.cpp" />
+    <ClCompile Include="WindowRenderer.cpp" />
+    <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.hpp" />
     <ClInclude Include="Logger.hpp" />
-    <ClInclude Include="MainLoopTickController.hpp" />
-    <ClInclude Include="RenderWindow.hpp" />
+    <ClInclude Include="WindowSyncer.hpp" />
+    <ClInclude Include="WindowRenderer.hpp" />
+    <ClInclude Include="Scene.hpp" />
     <ClInclude Include="Utils.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\SDL2_platformer_example_OLD\res\gfx\girl.png" />
+    <Image Include="res\gfx\cursor.png" />
+    <Image Include="res\gfx\girl.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

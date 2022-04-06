@@ -1,15 +1,34 @@
+
 #ifndef LOGGER_HPP
 #define LOGGER_HPP
 
-#include <string>
+#include <map>
+#include <sstream>
 
 class Logger
 {
 public:
-	static void logError(std::string const& text);
-	static void logError(std::string const& text, std::string const& error);
-	static void logInfo(std::string const& text);
-	static void logWarning(std::string const& error);
+	enum class Level
+	{
+		Error,
+		Info,
+		Warning
+	};
+
+	static void logIt(Logger::Level type, std::string const& message);
+
+private:
+	static std::map<Logger::Level, std::string> _levelMap;
 };
+
+std::ostream& operator<< (std::ostream& out, signed char const& c);
+std::ostream& operator<< (std::ostream& out, unsigned char const& c);
+
+#define EZ_LOG(level, ...) \
+{ \
+    std::stringstream ss; \
+    ss << __VA_ARGS__; \
+    ::Logger::logIt(level, ss.str()); \
+}
 
 #endif

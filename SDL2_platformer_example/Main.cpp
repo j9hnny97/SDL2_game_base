@@ -1,45 +1,45 @@
 
 #include "Entity.hpp"
 #include "Logger.hpp"
-#include "MainLoopTickController.hpp"
-#include "RenderWindow.hpp"
+#include "Scene.hpp"
 #include "Utils.hpp"
+#include "WindowRenderer.hpp"
+#include "WindowSyncer.hpp"
 
 #include <SDL.h>
 #include <SDL_image.h>
 
 int main(int argv, char* args[])
 {
+	EZ_LOG(Logger::Level::Error, "This is an error.");
+	EZ_LOG(Logger::Level::Info, "This is an info.");
+	EZ_LOG(Logger::Level::Warning, "This is a warning.");
+
 	if (SDL_Init(SDL_INIT_VIDEO) > 0)
 	{
-		Logger::logError("SDL library initialization failed", SDL_GetError());
-		Logger::logInfo("Exiting...");
+		EZ_LOG(Logger::Level::Error, "SDL library initialization failed (" << SDL_GetError() << ")");
 		return 1;
 	}
 
 	if (!IMG_Init(IMG_INIT_PNG))
 	{
-		Logger::logError("SDL_image library initialization failed", SDL_GetError());
-		Logger::logInfo("Exiting...");
+		EZ_LOG(Logger::Level::Error, "SDL_image library initialization failed (" << SDL_GetError() << ")");
 		return 1;
 	}
 
 	SDL_Event event;
-	MainLoopTickController tickController;
-	RenderWindow window("Game", 1280, 720);
+	WindowRenderer windowRenderer("Game", 1280, 720);
+	WindowSyncer windowSyncer;
 
-	SDL_Texture* girlTexture = window.loadTexture("res/gfx/girl.png");
-	Entity girl0(10, 10, girlTexture);
-	Entity girl1(110, 10, girlTexture);
-	Entity girl2(210, 10, girlTexture);
+	Scene scene(windowRenderer);
 
 	bool gameIsRunning = true;
 
 	while (gameIsRunning)
 	{
-		tickController.tickStarted();
+		windowSyncer.tickStarted();
 
-		while (tickController.tickIsOngoing())
+		while (windowSyncer.tickIsOngoing())
 		{
 			while (SDL_PollEvent(&event))
 			{
@@ -47,23 +47,35 @@ int main(int argv, char* args[])
 				{
 					gameIsRunning = false;
 				}
+				else if (event.type == SDL_MOUSEBUTTONDOWN)
+				{
+					switch (event.button.button)
+					{
+					case SDL_BUTTON_LEFT:
+						//Logger::logInfo("left click! [" << static_cast<int>(event.button.x) << ", " << static_cast<int>(event.button.y) << "]");
+						break;
+					case SDL_BUTTON_RIGHT:
+						//Logger::logInfo("right click! [" << static_cast<int>(event.button.x) << ", " << static_cast<int>(event.button.y) << "]");
+						break;
+					default:
+						break;
+					}
+					break;
+				}
 			}
 
-			window.clear();
-			window.render(girl0);
-			window.render(girl1);
-			window.render(girl2);
-			window.display();
+			windowRenderer.clear();
+			scene.renderEntities();
+			windowRenderer.display();
 
-			tickController.tickUpdate();
+			windowSyncer.tickUpdate();
 		}
 
-		tickController.tickEnded(window.getRefreshRate());
+		windowSyncer.tickEnded(windowRenderer.getRefreshRate());
 	}
 
-	window.destroy();
+	windowRenderer.destroy();
 	SDL_Quit();
 
-	Logger::logInfo("Exiting...");
 	return 0;
 }

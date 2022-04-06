@@ -23,22 +23,25 @@
 #define BOLD(x) "\x1B[1m" x RST
 #define UNDL(x) "\x1B[4m" x RST
 
-void Logger::logError(std::string const& text)
+std::ostream& operator<< (std::ostream& out, signed char const& c)
 {
-	std::cout << BOLD(FRED("[ERROR]")) << text << std::endl;
+	out << "#(" << (int)c << ")";
+	return out;
 }
 
-void Logger::logError(std::string const& text, std::string const& error)
+std::ostream& operator<< (std::ostream& out, unsigned char const& c)
 {
-	std::cout << BOLD(FRED("[ERROR]")) << text << " (" << error << ")" << std::endl;
+	out << "#(" << (int)c << ")";
+	return out;
 }
 
-void Logger::logInfo(std::string const& text)
-{
-	std::cout << BOLD(FCYN("[INFO]")) << text << std::endl;
-}
+std::map<Logger::Level, std::string> Logger::_levelMap({
+	{Level::Error,		BOLD(FRED("Error ----> "))},
+	{Level::Info,		BOLD(FCYN("Info -----> "))},
+	{Level::Warning,	BOLD(FYEL("Warning --> "))}
+	});
 
-void Logger::logWarning(std::string const& text)
+void Logger::logIt(Logger::Level type, std::string const& message)
 {
-	std::cout << BOLD(FYEL("[WARNING]")) << text << std::endl;
+	std::cout << _levelMap[type] << message << std::endl;
 }
