@@ -1,7 +1,7 @@
 #ifndef WINDOW_RENDERER_HPP
 #define WINDOW_RENDERER_HPP
 
-#include "Entity.hpp"
+#include "Texture.hpp"
 
 #include <SDL.h>
 #include <SDL_image.h>
@@ -16,8 +16,8 @@ public:
 	void destroy();
 	void display();
 	int getRefreshRate();
+	SDL_Renderer* getRenderer();
 	SDL_Texture* loadTexture(std::string const& filePath);
-	void render(Entity& entity);
 
 private:
 	SDL_Renderer* _renderer;

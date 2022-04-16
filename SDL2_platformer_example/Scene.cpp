@@ -1,24 +1,51 @@
 
 #include "Scene.hpp"
 
-Scene::Scene(WindowRenderer& windowRenderer)
-	: _windowRenderer(windowRenderer)
-{
-	SDL_Texture* girlTexture = _windowRenderer.loadTexture("res/gfx/girl.png");
+#include "Logger.hpp"
 
-	for (int row = 0; row < 10; row++)
-	{
-		for (int column = 0; column < 4; column++)
-		{
-			_entities.emplace_back(100.0f * row, 150.0f * column, girlTexture);
-		}
-	}
+Scene::Scene(SDL_Renderer* renderer)
+	: Entity(renderer)
+	, _balls(initializeBalls())
+	, _line(renderer)
+	, _table(renderer, "res/gfx/table.png")
+{
+	_line.positionX = 0.0f;
+	_line.positionY = 0.0f;
+	_line.sizeX = 800.0f;
+	_line.sizeY = 600.0f;
+
+	_table.positionX = 100.0f;
+	_table.positionY = 150.0f;
+	_table.sizeX = 600.0f;
+	_table.sizeY = 300.0f;
 }
 
-void Scene::renderEntities()
+void Scene::render()
 {
-	for (auto& entity : _entities)
+	_table.render();
+
+	for (auto& ball : _balls)
 	{
-		_windowRenderer.render(entity);
+		ball.render();
 	}
+
+	_line.render();
+}
+
+std::vector<Texture> Scene::initializeBalls()
+{
+	std::vector<Texture> balls;
+
+	for (int i = 0; i < 10; i++)
+	{
+		balls.emplace_back(_renderer, "res/gfx/balls.png", 15 * i, 0);
+
+		auto& newBall = balls.back();
+		newBall.sizeX = 15.0f;
+		newBall.sizeY = 15.0f;
+		newBall.positionX = 300.0f;
+		newBall.positionY = 200.0f + 20.0f * i;
+	}
+
+	return balls;
 }

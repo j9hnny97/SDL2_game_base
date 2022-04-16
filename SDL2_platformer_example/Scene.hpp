@@ -1,22 +1,24 @@
 #ifndef SCENE_HPP
 #define SCENE_HPP
 
-#include "Entity.hpp"
-#include "WindowRenderer.hpp"
+#include "Line.hpp"
+#include "Texture.hpp"
 
 #include <vector>
 
-class Scene
+class Scene : public Entity
 {
 public:
-	Scene(WindowRenderer& renderWindow);
+	Scene(SDL_Renderer* renderer);
 
-	void renderEntities();
+	void render() override;
 
 private:
-	std::vector<Entity> _entities;
+	std::vector<Texture> initializeBalls();
 
-	WindowRenderer& _windowRenderer;
+	std::vector<Texture> _balls;
+	Line _line;
+	Texture _table;
 };
 
 #endif

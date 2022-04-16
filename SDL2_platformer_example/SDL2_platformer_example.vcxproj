@@ -152,23 +152,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="WindowSyncer.cpp" />
     <ClCompile Include="WindowRenderer.cpp" />
     <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.hpp" />
+    <ClInclude Include="Field.hpp" />
+    <ClInclude Include="Line.hpp" />
     <ClInclude Include="Logger.hpp" />
+    <ClInclude Include="Texture.hpp" />
+    <ClInclude Include="TextureLoader.hpp" />
     <ClInclude Include="WindowSyncer.hpp" />
     <ClInclude Include="WindowRenderer.hpp" />
     <ClInclude Include="Scene.hpp" />
     <ClInclude Include="Utils.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\gfx\cursor.png" />
+    <Image Include="res\gfx\balls.png" />
     <Image Include="res\gfx\girl.png" />
+    <Image Include="res\gfx\table.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

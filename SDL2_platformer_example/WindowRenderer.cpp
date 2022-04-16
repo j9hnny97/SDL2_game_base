@@ -41,6 +41,11 @@ int WindowRenderer::getRefreshRate()
 	return mode.refresh_rate;
 }
 
+SDL_Renderer* WindowRenderer::getRenderer()
+{
+	return _renderer;
+}
+
 SDL_Texture* WindowRenderer::loadTexture(std::string const& filePath)
 {
 	SDL_Texture* texture = IMG_LoadTexture(_renderer, filePath.c_str());
@@ -51,23 +56,4 @@ SDL_Texture* WindowRenderer::loadTexture(std::string const& filePath)
 	}
 
 	return texture;
-}
-
-void WindowRenderer::render(Entity& entity)
-{
-	auto const& currentFrame = entity.getCurrentFrame();
-
-	SDL_Rect src;
-	src.x = currentFrame.x;
-	src.y = currentFrame.y;
-	src.w = currentFrame.w;
-	src.h = currentFrame.h;
-
-	SDL_Rect dst;
-	dst.x = static_cast<int>(entity.getPosX() * 1);
-	dst.y = static_cast<int>(entity.getPosY() * 1);
-	dst.w = currentFrame.w * 1;
-	dst.h = currentFrame.h * 1;
-
-	SDL_RenderCopy(_renderer, entity.getTexture(), &src, &dst);
 }

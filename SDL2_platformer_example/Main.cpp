@@ -28,10 +28,10 @@ int main(int argv, char* args[])
 	}
 
 	SDL_Event event;
-	WindowRenderer windowRenderer("Game", 1280, 720);
+	WindowRenderer windowRenderer("Game", 800, 600);
 	WindowSyncer windowSyncer;
 
-	Scene scene(windowRenderer);
+	Scene scene(windowRenderer.getRenderer());
 
 	bool gameIsRunning = true;
 
@@ -47,25 +47,34 @@ int main(int argv, char* args[])
 				{
 					gameIsRunning = false;
 				}
-				else if (event.type == SDL_MOUSEBUTTONDOWN)
-				{
-					switch (event.button.button)
-					{
-					case SDL_BUTTON_LEFT:
-						//Logger::logInfo("left click! [" << static_cast<int>(event.button.x) << ", " << static_cast<int>(event.button.y) << "]");
-						break;
-					case SDL_BUTTON_RIGHT:
-						//Logger::logInfo("right click! [" << static_cast<int>(event.button.x) << ", " << static_cast<int>(event.button.y) << "]");
-						break;
-					default:
-						break;
-					}
-					break;
-				}
+				//else if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_UP)
+				//{
+				//	EZ_LOG(Logger::Level::Info, event.key.keysym.sym);
+				//}
+				//else if (event.type == SDL_MOUSEMOTION)
+				//{
+				//	EZ_LOG(Logger::Level::Info, "Mouse is moving [" << event.button.x << ", " << event.button.y << "]");
+				//	SDL_ShowCursor(SDL_DISABLE);
+				//}
+				//else if (event.type == SDL_MOUSEBUTTONDOWN)
+				//{
+				//	switch (event.button.button)
+				//	{
+				//	case SDL_BUTTON_LEFT:
+				//		//Logger::logInfo("left click! [" << static_cast<int>(event.button.x) << ", " << static_cast<int>(event.button.y) << "]");
+				//		break;
+				//	case SDL_BUTTON_RIGHT:
+				//		//Logger::logInfo("right click! [" << static_cast<int>(event.button.x) << ", " << static_cast<int>(event.button.y) << "]");
+				//		break;
+				//	default:
+				//		break;
+				//	}
+				//	break;
+				//}
 			}
 
 			windowRenderer.clear();
-			scene.renderEntities();
+			scene.render();
 			windowRenderer.display();
 
 			windowSyncer.tickUpdate();
