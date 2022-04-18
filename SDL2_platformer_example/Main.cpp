@@ -1,10 +1,10 @@
 
-#include "Entity.hpp"
-#include "Logger.hpp"
-#include "Scene.hpp"
-#include "Utils.hpp"
-#include "WindowRenderer.hpp"
-#include "WindowSyncer.hpp"
+#include "base/Logger.hpp"
+#include "entities/Entity.hpp"
+#include "window/Mouse.hpp"
+#include "window/Scene.hpp"
+#include "window/WindowRenderer.hpp"
+#include "window/WindowSyncer.hpp"
 
 #include <SDL.h>
 #include <SDL_image.h>
@@ -31,6 +31,7 @@ int main(int argv, char* args[])
 	WindowRenderer windowRenderer("Game", 800, 600);
 	WindowSyncer windowSyncer;
 
+	Mouse mouse(windowRenderer.getRenderer());
 	Scene scene(windowRenderer.getRenderer());
 
 	bool gameIsRunning = true;
@@ -47,6 +48,9 @@ int main(int argv, char* args[])
 				{
 					gameIsRunning = false;
 				}
+
+				mouse.processEvent(event);
+
 				//else if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_UP)
 				//{
 				//	EZ_LOG(Logger::Level::Info, event.key.keysym.sym);
@@ -75,8 +79,10 @@ int main(int argv, char* args[])
 
 			windowRenderer.clear();
 			scene.render();
-			windowRenderer.display();
 
+			mouse.render();
+
+			windowRenderer.display();
 			windowSyncer.tickUpdate();
 		}
 

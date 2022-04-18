@@ -5,91 +5,105 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Resource Files\gfx">
-      <UniqueIdentifier>{68b18fa0-94a9-416a-a433-ca0663419bfd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Entities">
-      <UniqueIdentifier>{a5f3debf-7939-47e6-8a32-78cf001b6449}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Entities">
+    <Filter Include="Source Files\entities">
       <UniqueIdentifier>{6067a4a5-bb5c-4631-960d-cf63af8ea694}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\base">
+      <UniqueIdentifier>{59675c88-cc49-4fd7-b07d-81143a1f7f51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\backgrounds">
+      <UniqueIdentifier>{a936326b-bc90-4deb-8c7f-fa63f2129445}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\characters">
+      <UniqueIdentifier>{dc599a30-4a79-45da-8714-3e3129f9e1eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\others">
+      <UniqueIdentifier>{6ec3461c-59e6-4643-a7ca-0ff1cb8d3aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\window">
+      <UniqueIdentifier>{6f9fc11e-28eb-4cd2-9211-5373e81bc305}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Logger.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="entities\Line.cpp">
+      <Filter>Source Files\entities</Filter>
     </ClCompile>
-    <ClCompile Include="WindowRenderer.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="entities\Texture.cpp">
+      <Filter>Source Files\entities</Filter>
     </ClCompile>
-    <ClCompile Include="WindowSyncer.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="entities\Entity.cpp">
+      <Filter>Source Files\entities</Filter>
     </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="base\Logger.cpp">
+      <Filter>Source Files\base</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Source Files\Entities</Filter>
+    <ClCompile Include="window\Scene.cpp">
+      <Filter>Source Files\window</Filter>
     </ClCompile>
-    <ClCompile Include="Line.cpp">
-      <Filter>Source Files\Entities</Filter>
+    <ClCompile Include="window\WindowRenderer.cpp">
+      <Filter>Source Files\window</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Source Files\Entities</Filter>
+    <ClCompile Include="window\WindowSyncer.cpp">
+      <Filter>Source Files\window</Filter>
+    </ClCompile>
+    <ClCompile Include="window\Mouse.cpp">
+      <Filter>Source Files\window</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Logger.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="entities\Entity.hpp">
+      <Filter>Source Files\entities</Filter>
     </ClInclude>
-    <ClInclude Include="WindowRenderer.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="entities\Line.hpp">
+      <Filter>Source Files\entities</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="entities\Texture.hpp">
+      <Filter>Source Files\entities</Filter>
     </ClInclude>
-    <ClInclude Include="WindowSyncer.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="base\Logger.hpp">
+      <Filter>Source Files\base</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="base\TextureLoader.hpp">
+      <Filter>Source Files\base</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.hpp">
-      <Filter>Header Files\Entities</Filter>
+    <ClInclude Include="base\Utils.hpp">
+      <Filter>Source Files\base</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.hpp">
-      <Filter>Header Files\Entities</Filter>
+    <ClInclude Include="base\Field.hpp">
+      <Filter>Source Files\base</Filter>
     </ClInclude>
-    <ClInclude Include="Field.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="window\Scene.hpp">
+      <Filter>Source Files\window</Filter>
     </ClInclude>
-    <ClInclude Include="Line.hpp">
-      <Filter>Header Files\Entities</Filter>
+    <ClInclude Include="window\WindowRenderer.hpp">
+      <Filter>Source Files\window</Filter>
     </ClInclude>
-    <ClInclude Include="TextureLoader.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="window\WindowSyncer.hpp">
+      <Filter>Source Files\window</Filter>
+    </ClInclude>
+    <ClInclude Include="window\Mouse.hpp">
+      <Filter>Source Files\window</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\gfx\girl.png">
-      <Filter>Resource Files\gfx</Filter>
+    <Image Include="resources\backgrounds\table.png">
+      <Filter>Resource Files\backgrounds</Filter>
     </Image>
-    <Image Include="res\gfx\table.png">
-      <Filter>Resource Files\gfx</Filter>
+    <Image Include="resources\characters\girl.png">
+      <Filter>Resource Files\characters</Filter>
     </Image>
-    <Image Include="res\gfx\balls.png">
-      <Filter>Resource Files\gfx</Filter>
+    <Image Include="resources\others\balls.png">
+      <Filter>Resource Files\others</Filter>
+    </Image>
+    <Image Include="resources\others\cursor.png">
+      <Filter>Resource Files\others</Filter>
     </Image>
   </ItemGroup>
 </Project>

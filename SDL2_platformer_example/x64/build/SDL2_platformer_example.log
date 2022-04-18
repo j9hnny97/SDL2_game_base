@@ -1,0 +1,99 @@
+﻿  Main.cpp
+  Texture.cpp
+C:\git\SDL2_platformer_example\SDL2_platformer_example\entities\Texture.cpp(19,57): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\type_traits(1388): message : see reference to function template instantiation 'auto Texture::{ctor}::<lambda_2dde686318b9ebee811ea593533d6e58>::operator ()<T>(const T &) const' being compiled
+          with
+          [
+              T=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\type_traits(1610): message : see reference to alias template instantiation 'std::_Decltype_invoke_nonzero<_Callable,T,>' being compiled
+          with
+          [
+              _Callable=Texture::{ctor}::<lambda_2dde686318b9ebee811ea593533d6e58> &,
+              T=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\type_traits(1648): message : see reference to alias template instantiation 'std::_Is_invocable_r_<_Rx,_Callable,T>' being compiled
+          with
+          [
+              _Rx=void,
+              _Callable=Texture::{ctor}::<lambda_2dde686318b9ebee811ea593533d6e58> &,
+              T=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\functional(890): message : see reference to class template instantiation 'std::_Is_invocable_r<_Ret,Texture::{ctor}::<lambda_2dde686318b9ebee811ea593533d6e58> &,T>' being compiled
+          with
+          [
+              _Ret=void,
+              T=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\functional(890): message : see reference to variable template 'const bool conjunction_v<std::negation<std::is_same<<lambda_2dde686318b9ebee811ea593533d6e58>,std::function<void __cdecl(float)> > >,std::_Is_invocable_r<void,<lambda_2dde686318b9ebee811ea593533d6e58> &,float> >' being compiled
+C:\git\SDL2_platformer_example\SDL2_platformer_example\entities\Texture.cpp(19): message : see reference to alias template instantiation 'std::_Func_class<_Ret,T>::_Enable_if_callable_t<Texture::{ctor}::<lambda_2dde686318b9ebee811ea593533d6e58>&,std::function<void (T)>>' being compiled
+          with
+          [
+              _Ret=void,
+              T=float
+          ]
+C:\git\SDL2_platformer_example\SDL2_platformer_example\entities\Texture.cpp(20,57): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\type_traits(1388): message : see reference to function template instantiation 'auto Texture::{ctor}::<lambda_21b85dfcd5ec365d78a7e35ebb205db9>::operator ()<T>(const T &) const' being compiled
+          with
+          [
+              T=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\type_traits(1610): message : see reference to alias template instantiation 'std::_Decltype_invoke_nonzero<_Callable,T,>' being compiled
+          with
+          [
+              _Callable=Texture::{ctor}::<lambda_21b85dfcd5ec365d78a7e35ebb205db9> &,
+              T=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\type_traits(1648): message : see reference to alias template instantiation 'std::_Is_invocable_r_<_Rx,_Callable,T>' being compiled
+          with
+          [
+              _Rx=void,
+              _Callable=Texture::{ctor}::<lambda_21b85dfcd5ec365d78a7e35ebb205db9> &,
+              T=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\functional(890): message : see reference to class template instantiation 'std::_Is_invocable_r<_Ret,Texture::{ctor}::<lambda_21b85dfcd5ec365d78a7e35ebb205db9> &,T>' being compiled
+          with
+          [
+              _Ret=void,
+              T=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\functional(890): message : see reference to variable template 'const bool conjunction_v<std::negation<std::is_same<<lambda_21b85dfcd5ec365d78a7e35ebb205db9>,std::function<void __cdecl(float)> > >,std::_Is_invocable_r<void,<lambda_21b85dfcd5ec365d78a7e35ebb205db9> &,float> >' being compiled
+C:\git\SDL2_platformer_example\SDL2_platformer_example\entities\Texture.cpp(20): message : see reference to alias template instantiation 'std::_Func_class<_Ret,T>::_Enable_if_callable_t<Texture::{ctor}::<lambda_21b85dfcd5ec365d78a7e35ebb205db9>&,std::function<void (T)>>' being compiled
+          with
+          [
+              _Ret=void,
+              T=float
+          ]
+  Mouse.cpp
+C:\git\SDL2_platformer_example\SDL2_platformer_example\window\Mouse.cpp(36,30): warning C4244: 'argument': conversion from 'int' to 'const T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\git\SDL2_platformer_example\SDL2_platformer_example\window\Mouse.cpp(37,30): warning C4244: 'argument': conversion from 'int' to 'const T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\git\SDL2_platformer_example\SDL2_platformer_example\window\Mouse.cpp(38,30): warning C4244: 'argument': conversion from 'int' to 'const T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\git\SDL2_platformer_example\SDL2_platformer_example\window\Mouse.cpp(39,30): warning C4244: 'argument': conversion from 'int' to 'const T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Scene.cpp
+  WindowRenderer.cpp
+  Generating Code...
+  SDL2_platformer_example.vcxproj -> C:\git\SDL2_platformer_example\x64\build\SDL2_platformer_example.exe
