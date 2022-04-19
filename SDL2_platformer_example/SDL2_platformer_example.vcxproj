@@ -192,13 +192,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\git\SDL2-2.0.20\include;C:\git\SDL2_image-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\git\SDL2_ttf-2.0.18\include;C:\git\SDL2-2.0.20\include;C:\git\SDL2_image-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\git\SDL2-2.0.20\lib\x64;C:\git\SDL2_image-2.0.5\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\git\SDL2-2.0.20\lib\x64;C:\git\SDL2_ttf-2.0.18\lib\x64;C:\git\SDL2_image-2.0.5\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
@@ -219,25 +219,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="base\InputCentral.cpp" />
     <ClCompile Include="base\Logger.cpp" />
+    <ClCompile Include="base\Mouse.cpp" />
+    <ClCompile Include="entities\Button.cpp" />
     <ClCompile Include="entities\Entity.cpp" />
+    <ClCompile Include="entities\Label.cpp" />
     <ClCompile Include="entities\Line.cpp" />
     <ClCompile Include="entities\Texture.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="window\Mouse.cpp" />
     <ClCompile Include="window\Scene.cpp" />
     <ClCompile Include="window\WindowRenderer.cpp" />
     <ClCompile Include="window\WindowSyncer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base\Field.hpp" />
+    <ClInclude Include="base\InputCentral.hpp" />
     <ClInclude Include="base\Logger.hpp" />
+    <ClInclude Include="base\Mouse.hpp" />
     <ClInclude Include="base\TextureLoader.hpp" />
     <ClInclude Include="base\Utils.hpp" />
+    <ClInclude Include="entities\Button.hpp" />
     <ClInclude Include="entities\Entity.hpp" />
+    <ClInclude Include="entities\Label.hpp" />
     <ClInclude Include="entities\Line.hpp" />
     <ClInclude Include="entities\Texture.hpp" />
-    <ClInclude Include="window\Mouse.hpp" />
     <ClInclude Include="window\Scene.hpp" />
     <ClInclude Include="window\WindowRenderer.hpp" />
     <ClInclude Include="window\WindowSyncer.hpp" />

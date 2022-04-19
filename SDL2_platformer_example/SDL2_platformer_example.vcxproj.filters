@@ -53,8 +53,17 @@
     <ClCompile Include="window\WindowSyncer.cpp">
       <Filter>Source Files\window</Filter>
     </ClCompile>
-    <ClCompile Include="window\Mouse.cpp">
-      <Filter>Source Files\window</Filter>
+    <ClCompile Include="base\Mouse.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\InputCentral.cpp">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\Button.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\Label.cpp">
+      <Filter>Source Files\entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,8 +97,17 @@
     <ClInclude Include="window\WindowSyncer.hpp">
       <Filter>Source Files\window</Filter>
     </ClInclude>
-    <ClInclude Include="window\Mouse.hpp">
-      <Filter>Source Files\window</Filter>
+    <ClInclude Include="base\Mouse.hpp">
+      <Filter>Source Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\InputCentral.hpp">
+      <Filter>Source Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Button.hpp">
+      <Filter>Source Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Label.hpp">
+      <Filter>Source Files\entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

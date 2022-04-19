@@ -6,9 +6,15 @@
 Scene::Scene(SDL_Renderer* renderer)
 	: Entity(renderer)
 	, _balls(initializeBalls())
+	, _title(renderer)
 	, _line(renderer)
 	, _table(renderer, "resources/backgrounds/table.png")
 {
+	_title.positionX = 0.0f;
+	_title.positionY = 0.0f;
+	_title.sizeX = 800.0f;
+	_title.sizeY = 100.0f;
+
 	_line.positionX = 0.0f;
 	_line.positionY = 0.0f;
 	_line.sizeX = 800.0f;
@@ -29,6 +35,7 @@ void Scene::render()
 		ball.render();
 	}
 
+	_title.render();
 	_line.render();
 }
 
