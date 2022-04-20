@@ -12,6 +12,11 @@ InputCentral::InputStruct const& InputCentral::getCurrentInput() const
 	return _currentInput;
 }
 
+SDL_Event InputCentral::getLastEvent()
+{
+	return _event;
+}
+
 int InputCentral::pollEvent()
 {
 	auto const lastInput = _currentInput;

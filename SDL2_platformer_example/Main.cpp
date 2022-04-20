@@ -58,6 +58,8 @@ int main(int argv, char* args[])
 				}
 			}
 
+			mouse.processEvent(_inputCentral.getLastEvent());
+
 			windowRenderer.clear();
 			scene.render();
 

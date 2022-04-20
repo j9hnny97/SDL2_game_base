@@ -35,6 +35,7 @@ public:
 	};
 
 	InputStruct const& getCurrentInput() const;
+	SDL_Event getLastEvent();
 	int pollEvent();
 
 private:
